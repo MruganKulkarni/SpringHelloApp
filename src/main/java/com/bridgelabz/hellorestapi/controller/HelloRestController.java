@@ -32,4 +32,10 @@ public class HelloRestController {
     public String helloPost(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+
+    @PutMapping("/hello/put/{firstName}")
+    public String helloPut(@PathVariable String firstName,
+                           @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }

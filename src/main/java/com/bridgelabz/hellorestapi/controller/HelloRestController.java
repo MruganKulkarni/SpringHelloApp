@@ -1,19 +1,25 @@
 package com.bridgelabz.hellorestapi.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloRestController {
 
+    // UC1
     @GetMapping("/hello")
     public String hello() {
         return "Hello from BridgeLabz";
     }
 
+    // UC2
     @GetMapping("/hello/query")
     public String helloQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+    // UC3
+    @GetMapping("/hello/param/{name}")
+    public String helloParam(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 }
